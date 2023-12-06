@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./lib/emails-input.css" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <title>Emails input</title>
+  </head>
+  <body>
+    
+
+      <div id="emails-input"></div>
+  
+    <div class="action-bar">
+      <button class="button" id="add-random-email">Add email</button>
+      <button class="
+      
+      
+      " id="show-emails-count">Get emails count</button>
+    </div>
+    <script src="./lib/emails-input.js"></script>
+    <script>
+      const inputContainerNode = document.querySelector('#emails-input');
+      const emailsInput = EmailsInput(inputContainerNode);
+      const btnShowEmailsCount = document.getElementById('show-emails-count');
+      btnShowEmailsCount.addEventListener('click', function (e) {
+        alert('Number of valid Emails: ' + emailsInput.getEmailsList().length);
+      });
+      const btnAddRandomEmail = document.getElementById('add-random-email');
+      const listOfRandomEmails = [
+        //get the emails from the database
+        'alejandro93055@gmail.com',
+        'cloud9305@hotmail.com',
+        'alex9305@gmail.com'
+   
+      ];
+
+      const count =  listOfRandomEmails.length
+
+      for (let index = 0; index < listOfRandomEmails.length; index++) {
+        emailsInput.addEmail(
+          listOfRandomEmails[
+            index
+          ]
+        );
+        
+      }
+  
+        
+    
+    </script>
+  </body>
+</html>
